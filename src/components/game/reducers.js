@@ -1,12 +1,10 @@
 export const IMAGES_LOAD = 'IMAGES_LOAD';
+export const CARD_SELECTED = 'CARD_SELECTED';
 
 export const getImages = state => state.images;
 
 export function images(
-  state = [
-    ['', '', '', '', '', '', '', ''],
-    ['', '', '', '', '', '', '', ''],
-    ['', '', '', '', '', '', '', '']],
+  state = null,
   { type, payload }) {
 
   switch (type) {
