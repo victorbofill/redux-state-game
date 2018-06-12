@@ -5,29 +5,27 @@ import Card from './Card';
 
 export default class Table extends Component {
   static propTypes = {
-    randomizedImagesOne: PropTypes.array,
-    randomizedImagesTwo: PropTypes.array,
-    randomizedImagesThree: PropTypes.array
+    images: PropTypes.array
   };
 
   render() {
-    const { randomizedImagesOne, randomizedImagesTwo, randomizedImagesThree } = this.props;
+    const { images } = this.props;
 
     return (
       <table className={styles['game-table']}>
         <tbody>
           <tr>
-            {randomizedImagesOne.map((image, i) => (
+            {images[0].map((image, i) => (
               <Card key={i} image={image}/>
             ))}
           </tr>
           <tr>
-            {randomizedImagesTwo.map((image, i) => (
+            {images[1].map((image, i) => (
               <Card key={i} image={image}/>
             ))}
           </tr>
           <tr>
-            {randomizedImagesThree.map((image, i) => (
+            {images[2].map((image, i) => (
               <Card key={i} image={image}/>
             ))}
           </tr>
