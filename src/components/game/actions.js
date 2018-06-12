@@ -28,7 +28,32 @@ const images = [
   imageTwelve, imageTwelve
 ];
 
+const shuffle = (array) => {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
+
+  while(0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+};
+
+const arrayOfImageArrays = [];
+const shuffledImages = shuffle(images);
+
+shuffle(images);
+
+arrayOfImageArrays.push(shuffledImages.slice(0, 7));
+arrayOfImageArrays.push(shuffledImages.slice(8, 15));
+arrayOfImageArrays.push(shuffledImages.slice(16, 23));
+
 export const loadImages = () => ({
   type: IMAGES_LOAD,
-  payload: images
+  payload: arrayOfImageArrays
 });
