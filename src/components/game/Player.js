@@ -6,7 +6,7 @@ import styles from './Player.css';
 class Player extends PureComponent {
 
   static propTypes = {
-    // index: PropTypes.number.isRequired,
+    index: PropTypes.number.isRequired,
     selection: PropTypes.image,
     makeSelection: PropTypes.func.isRequired
   };

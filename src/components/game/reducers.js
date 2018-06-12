@@ -1,11 +1,12 @@
 export const SELECTION = 'SELECTION';
-export const NEW-ROUND = 'NEW_ROUND';
+export const NEW_GAME = 'NEW_GAME';
+export const NEW_ROUND = 'NEW_ROUND';
 export const TALLY = 'TALLY';
 
 export const ROUND = {
-  PLAYING: 'PLAYING';
-  MATCH: 'MATCH';
-  NoMATCH: 'NO MATCH';
+  PLAYING: 'PLAYING',
+  MATCH: 'MATCH',
+  NoMATCH: 'NO MATCH'
 };
 
 export const getMatch = state => state.match;
