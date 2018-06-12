@@ -1,54 +1,35 @@
-// export const NEW_ROUND = 'NEW_ROUND';
-// // export const SELECTION = 'SELECTION';
-// // export const TALLY = 'TALLY';
+export const IMAGES_LOAD = 'IMAGES_LOAD';
 
-// export const ROUND = {
-//   PLAYING: 'PLAYING',
-//   MATCH: 'MATCH',
-//   NOMATCH: 'NO MATCH'
-// };
+export const getImages = state => state.images;
 
-// export const getMatch = state => state.match;
-// export const getSelections = state => state.selections;
-// export const getRoundState = state => {
-//   const [one, two] = getSelections(state);
+const shuffle = (array) => {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
 
-//   if(!one || !two) return ROUND_STATE.PLAYING;
-//   if(one === two) return ROUND_STATE.MATCH;
+  while(0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-//   //if no more matches to make, win.
-// };
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+};
 
-// const firstSelections = () => [];
-
-// export function selections(state = firstSelections(), { type, payload}) {
-//   switch(type) {
-//     case SELECTION: {
-//       const copy = [...state];
-//       copy[payload.index] = payload.choice;
-//       return copy;
-//     }
-//     case NEW_ROUND: {
-//       return firstSelections();
-//     }
-//     default:
-//       return state;
-//   }
-// }
-// export const initMatch = () => ({
-//   [ROUND_STATE.MATCH]: 0,
-//   [ROUND_STATE.NoMATCH]: 0,
-//   [ROUND_STATE.WIN]: 0
-// });
-
-// export function match(state = initMatch(), { type, payload }) {
-//   switch(type) {
-//     case TALLY:
-//       return {
-//         ...state,
-//         [payload]: state[payload] + 1
-//       };
-//     default:
-//       return state;
-//   }
-// }
+export function images(state = [], { type, payload }) {
+  switch (type) {
+    case IMAGES_LOAD:
+    {
+      const shuffledPayload = shuffle(payload);
+      const imagesArray = [];
+      imagesArray.push(shuffledPayload.slice(0, 7));
+      imagesArray.push(shuffledPayload.slice(8, 15));
+      imagesArray.push(shuffledPayload.slice(16, 23));
+      return imagesArray;
+    }
+    default:
+      return state;
+  }
+}
