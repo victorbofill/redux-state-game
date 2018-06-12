@@ -1,14 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-// import { REDUCERS } from REDUCERS;
+import { images } from './components/game/reducers';
 
-// const rootReducer = combineReducers({
-// })
+const rootReducer = combineReducers({
+  images
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  // rootReducer,
+  rootReducer,
   composeEnhancers(
     applyMiddleware(
       thunk
