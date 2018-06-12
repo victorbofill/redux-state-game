@@ -1,89 +1,35 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Table.css';
-import logo from '../img/alchemy.png';
+import Card from './Card';
 
 export default class Table extends Component {
+  static propTypes = {
+    randomizedImagesOne: PropTypes.array,
+    randomizedImagesTwo: PropTypes.array,
+    randomizedImagesThree: PropTypes.array
+  };
+
   render() {
+    const { randomizedImagesOne, randomizedImagesTwo, randomizedImagesThree } = this.props;
+
     return (
       <table className={styles['game-table']}>
         <tbody>
           <tr>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
+            {randomizedImagesOne.map((image, i) => (
+              <Card key={i} image={image}/>
+            ))}
           </tr>
           <tr>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
+            {randomizedImagesTwo.map((image, i) => (
+              <Card key={i} image={image}/>
+            ))}
           </tr>
           <tr>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
-            <td className={styles.slot}>
-              <img src={logo} />
-            </td>
+            {randomizedImagesThree.map((image, i) => (
+              <Card key={i} image={image}/>
+            ))}
           </tr>
         </tbody>
       </table>
