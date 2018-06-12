@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --hot --mode development",
+    "lint": "eslint .",
+    "pretest": "npm run lint"
   },
   "authors": "Victor Bofill <victorm.bofill@gmail.com>, Katlyn Tucker <studioquirk@yahoo.com>",
   "license": "MIT",
@@ -49,6 +53,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "shortid": "^2.2.8"
   }
 }
