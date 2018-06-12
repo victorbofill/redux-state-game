@@ -1,21 +1,4 @@
-:local(.game-container) {
+:local(.game-table) {
   height: 600px;
   width: 1600px;
-}
-
-:local(.game-table) {
-  height: 100%;
-  width: 100%;
-}
-
-:local(.slot) {
-  border: 1px solid black;
-  height: 175px;
-  text-align: center;
-  width: 175px;
-}
-
-:local(.slot) img {
-  max-height: 100%;
-  max-width: 100%;
 }

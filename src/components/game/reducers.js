@@ -11,7 +11,6 @@ export const ROUND = {
 
 export const getMatch = state => state.match;
 export const getSelections = state => state.selections;
-export const getPlayerSelection = (index, state) => getSelections(state)[index];
 export const getRoundState = state => {
   const [one, two] = getSelections(state);
 
@@ -23,8 +22,8 @@ export const getRoundState = state => {
 
 const firstSelections = () => [];
 
-export function selections(state = firstSelections(), { type, payload}) {
-  switch(type) {
+export function selections(state = firstSelections(), { type, payload }) {
+  switch (type) {
     case SELECTION: {
       const copy = [...state];
       copy[payload.index] = payload.choice;
@@ -45,7 +44,7 @@ export const initMatch = () => ({
 });
 
 export function match(state = initMatch(), { type, payload }) {
-  switch(type) {
+  switch (type) {
     case TALLY:
       return {
         ...state,
