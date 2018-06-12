@@ -1,11 +1,6 @@
-:local(.game-container) {
+:local(.game-table) {
   height: 600px;
   width: 1600px;
-}
-
-:local(.game-table) {
-  height: 100%;
-  width: 100%;
 }
 
 :local(.slot) {
