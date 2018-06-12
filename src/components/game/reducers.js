@@ -1,16 +1,15 @@
-export const SELECTION = 'SELECTION';
 export const NEW_ROUND = 'NEW_ROUND';
-export const TALLY = 'TALLY';
+// export const SELECTION = 'SELECTION';
+// export const TALLY = 'TALLY';
 
 export const ROUND = {
   PLAYING: 'PLAYING',
   MATCH: 'MATCH',
-  NoMATCH: 'NO MATCH'
+  NOMATCH: 'NO MATCH'
 };
 
 export const getMatch = state => state.match;
 export const getSelections = state => state.selections;
-export const getPlayerSelection = (index, state) => getSelections(state)[index];
 export const getRoundState = state => {
   const [one, two] = getSelections(state);
 
