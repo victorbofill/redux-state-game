@@ -16,7 +16,8 @@ class Table extends Component {
 
     return (
       <div>
-        <button onClick={() => loadImages()}>LOAD</button>
+        <button onClick={() => loadImages()}>New Game</button>
+        <h3 className={styles.announcement}>Game reset!</h3>
         <table className={styles['game-table']}>
           <tbody>
             <tr>

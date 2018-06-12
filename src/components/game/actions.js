@@ -1,6 +1,6 @@
 import { IMAGES_LOAD } from './reducers';
 
-import imageOne from '../img/10.jpg';
+import imageOne from '../img/01.jpg';
 import imageTwo from '../img/02.jpg';
 import imageThree from '../img/03.jpg';
 import imageFour from '../img/04.jpg';
@@ -44,16 +44,16 @@ const shuffle = (array) => {
   return array;
 };
 
-const arrayOfImageArrays = [];
-const shuffledImages = shuffle(images);
+export const loadImages = () => {
+  const arrayOfImageArrays = [];
+  const shuffledImages = shuffle(images);
 
-shuffle(images);
+  arrayOfImageArrays.push(shuffledImages.slice(0, 8));
+  arrayOfImageArrays.push(shuffledImages.slice(8, 16));
+  arrayOfImageArrays.push(shuffledImages.slice(16, 24));
 
-arrayOfImageArrays.push(shuffledImages.slice(0, 7));
-arrayOfImageArrays.push(shuffledImages.slice(8, 15));
-arrayOfImageArrays.push(shuffledImages.slice(16, 23));
-
-export const loadImages = () => ({
-  type: IMAGES_LOAD,
-  payload: arrayOfImageArrays
-});
+  return {
+    type: IMAGES_LOAD,
+    payload: arrayOfImageArrays
+  };
+};

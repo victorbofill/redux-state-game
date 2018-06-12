@@ -1,8 +1,9 @@
 :local(.card) {
   border: 1px solid black;
-  height: 175px;
   text-align: center;
   width: 175px;
+  margin: 0;
+  padding: 0;
 }
 
 :local(.card) img {

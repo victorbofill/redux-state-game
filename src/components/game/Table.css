@@ -2,3 +2,20 @@
   height: 600px;
   width: 1600px;
 }
+
+:local(.announcement) {
+  display: inline;
+  animation: fade-out 2s 1s forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%
+  }
+  90% {
+    opacity: 100%
+  }
+  100% {
+    opacity: 0;
+  }
+}
