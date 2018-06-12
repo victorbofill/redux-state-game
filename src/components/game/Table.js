@@ -20,17 +20,17 @@ class Table extends Component {
         <table className={styles['game-table']}>
           <tbody>
             <tr>
-              {images[0].map((image, i) => (
+              {images && images[0].map((image, i) => (
                 <Card key={i} image={image}/>
               ))}
             </tr>
             <tr>
-              {images[1].map((image, i) => (
+              {images && images[1].map((image, i) => (
                 <Card key={i} image={image}/>
               ))}
             </tr>
             <tr>
-              {images[2].map((image, i) => (
+              {images && images[2].map((image, i) => (
                 <Card key={i} image={image}/>
               ))}
             </tr>
