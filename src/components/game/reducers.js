@@ -14,3 +14,15 @@ export function images(
       return state;
   }
 }
+
+export function card(
+  state = null,
+  { type, payload }) {
+
+  switch (type) {
+    case CARD_SELECTED:
+      return payload;
+    default:
+      return state;
+  }
+}
