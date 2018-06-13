@@ -14,7 +14,6 @@ class Card extends Component {
     handleSelectionOrder: PropTypes.func
   };
 
-  
   render() {
     const { selectCard, handleSelectionOrder } = this.props;
     const frontContent = <img src={logo}/>;
@@ -25,7 +24,7 @@ class Card extends Component {
         className={styles.card}
         onClick={(image) => {
           selectCard(image);
-          handleSelectionOrder(image);
+          handleSelectionOrder(this.props.image);
         }}>
         <CardFlippable frontContent={frontContent} backContent={backContent}/>
       </td>

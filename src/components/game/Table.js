@@ -27,10 +27,10 @@ class Table extends Component {
 
   handleSelectionOrder = (card) => {
     if(!this.state.secondChoice) {
-      this.setState({ firstCard: card.target.src.slice(22) });
+      this.setState({ firstCard: card.slice(22) });
       this.setState({ secondChoice: true });
     } else {
-      if(this.state.firstCard === card.target.src.slice(22)) {
+      if(this.state.firstCard === card.slice(22)) {
         this.setState({ match: 'Match!' });
       }
       this.setState({ secondChoice: false });
