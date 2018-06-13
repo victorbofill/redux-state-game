@@ -49,13 +49,12 @@
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
-    "react-card-flip": "^0.2.1",
+    "react-card-flippable": "^1.1.5",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "shortid": "^2.2.8",
-    "yarn": "^1.7.0"
+    "shortid": "^2.2.8"
   }
 }
