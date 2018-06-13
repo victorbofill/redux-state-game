@@ -7,14 +7,20 @@ import { selectCard } from './actions';
 class Card extends Component {
   static propTypes = {
     image: PropTypes.any,
-    selectCard: PropTypes.func
+    selectCard: PropTypes.func,
+    handleSelectionOrder: PropTypes.func
   };
 
   render() {
-    const { image, selectCard } = this.props;
+    const { image, selectCard, handleSelectionOrder } = this.props;
 
     return (
-      <td className={styles.card} onClick={(image) => selectCard(image)}>
+      <td
+        className={styles.card}
+        onClick={(image) => {
+          selectCard(image);
+          handleSelectionOrder(image);
+        }}>
         <img src={image} />
       </td>
     );

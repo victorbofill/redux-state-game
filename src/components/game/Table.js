@@ -9,35 +9,61 @@ class Table extends Component {
   static propTypes = {
     images: PropTypes.array,
     loadImages: PropTypes.func,
-    card: PropTypes.any
+    card: PropTypes.any,
+    checkMatch: PropTypes.func,
+    getCard: PropTypes.func
+  };
+
+  state = {
+    secondChoice: false,
+    firstCard: null,
+    match: false
   };
 
   componentDidMount() {
     this.props.loadImages();
   }
 
+  handleSelectionOrder = (card) => {
+    if(!this.state.secondChoice) {
+      this.setState({ firstCard: card.target.src.slice(22) });
+      this.setState({ secondChoice: true });
+    } else {
+      if(this.state.firstCard === card.target.src.slice(22)) {
+        this.setState({ match: 'Match!' });
+      }
+      this.setState({ secondChoice: false });
+    } 
+  };
+
   render() {
-    const { images, card, loadImages } = this.props;
+    const { images, loadImages } = this.props;
 
     return (
       <div>
-        <p>Card: {card}</p>
+        <p>Match?: {this.state.match && this.state.match}</p>
         <button onClick={(card) => loadImages(card)}>New Game</button>
         <table className={styles['game-table']}>
           <tbody>
             <tr>
               {images && images[0].map((image, i) => (
-                <Card key={i} image={image} index={i}/>
+                <Card
+                  key={i}
+                  image={image}
+                  index={i}
+                  handleSelectionOrder={this.handleSelectionOrder}
+                  handleCheckMatch={this.handleCheckMatch}
+                />
               ))}
             </tr>
             <tr>
               {images && images[1].map((image, i) => (
-                <Card key={i} image={image} index={i}/>
+                <Card key={i} image={image} index={i} handleSelectionOrder={this.handleSelectionOrder}/>
               ))}
             </tr>
             <tr>
               {images && images[2].map((image, i) => (
-                <Card key={i} image={image} index={i}/>
+                <Card key={i} image={image} index={i} handleSelectionOrder={this.handleSelectionOrder}/>
               ))}
             </tr>
           </tbody>
