@@ -5,6 +5,7 @@ import styles from './Table.css';
 import { loadImages } from './actions';
 import Card from './Card';
 
+
 class Table extends Component {
   static propTypes = {
     images: PropTypes.array,

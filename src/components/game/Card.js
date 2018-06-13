@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './Card.css';
+import CardFlippable from 'react-card-flippable';
 import { selectCard } from './actions';
+import logo from '../img/alchemy.png';
+
 
 class Card extends Component {
   static propTypes = {
@@ -11,8 +14,11 @@ class Card extends Component {
     handleSelectionOrder: PropTypes.func
   };
 
+  
   render() {
     const { image, selectCard, handleSelectionOrder } = this.props;
+
+    const frontContent = <img src={logo}/>;
 
     return (
       <td
@@ -21,7 +27,7 @@ class Card extends Component {
           selectCard(image);
           handleSelectionOrder(image);
         }}>
-        <img src={image} />
+        <CardFlippable frontContent={frontContent} backContent={image}/>
       </td>
     );
   }
