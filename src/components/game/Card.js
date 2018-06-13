@@ -14,7 +14,7 @@ class Card extends Component {
     const { image, selectCard } = this.props;
 
     return (
-      <td className={styles.card} onClick={(card) => selectCard(card)}>
+      <td className={styles.card} onClick={(image) => selectCard(image)}>
         <img src={image} />
       </td>
     );
