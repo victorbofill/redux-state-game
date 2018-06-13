@@ -21,17 +21,17 @@ class Table extends Component {
           <tbody>
             <tr>
               {images && images[0].map((image, i) => (
-                <Card key={i} image={image}/>
+                <Card key={i} image={image} index={i}/>
               ))}
             </tr>
             <tr>
               {images && images[1].map((image, i) => (
-                <Card key={i} image={image}/>
+                <Card key={i} image={image} index={i}/>
               ))}
             </tr>
             <tr>
               {images && images[2].map((image, i) => (
-                <Card key={i} image={image}/>
+                <Card key={i} image={image} index={i}/>
               ))}
             </tr>
           </tbody>
