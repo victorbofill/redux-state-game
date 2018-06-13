@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './Table.css';
-import Card from './Card';
 import { loadImages } from './actions';
+import Card from './Card';
 
 class Table extends Component {
   static propTypes = {
