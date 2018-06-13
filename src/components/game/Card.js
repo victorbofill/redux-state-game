@@ -16,9 +16,9 @@ class Card extends Component {
 
   
   render() {
-    const { image, selectCard, handleSelectionOrder } = this.props;
-
+    const { selectCard, handleSelectionOrder } = this.props;
     const frontContent = <img src={logo}/>;
+    const backContent = <img src={this.props.image} />;
 
     return (
       <td
@@ -27,7 +27,7 @@ class Card extends Component {
           selectCard(image);
           handleSelectionOrder(image);
         }}>
-        <CardFlippable frontContent={frontContent} backContent={image}/>
+        <CardFlippable frontContent={frontContent} backContent={backContent}/>
       </td>
     );
   }
