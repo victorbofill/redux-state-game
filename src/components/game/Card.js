@@ -11,11 +11,12 @@ class Card extends Component {
   static propTypes = {
     image: PropTypes.any,
     selectCard: PropTypes.func,
-    handleSelectionOrder: PropTypes.func
+    handleSelection: PropTypes.func,
+    handleFlipped: PropTypes.any
   };
 
   render() {
-    const { selectCard, handleSelectionOrder } = this.props;
+    const { selectCard, handleSelection } = this.props;
     const frontContent = <img src={logo}/>;
     const backContent = <img src={this.props.image} />;
 
@@ -24,9 +25,9 @@ class Card extends Component {
         className={styles.card}
         onClick={(image) => {
           selectCard(image);
-          handleSelectionOrder(this.props.image);
+          handleSelection(this.props.image);
         }}>
-        <CardFlippable frontContent={frontContent} backContent={backContent}/>
+        <CardFlippable frontContent={frontContent} backContent={backContent} />
       </td>
     );
   }

@@ -25,7 +25,7 @@ class Table extends Component {
     this.props.loadImages();
   }
 
-  handleSelectionOrder = (card) => {
+  handleSelection = (card) => {
     if(!this.state.secondChoice) {
       this.setState({ firstCard: card.slice(22) });
       this.setState({ secondChoice: true });
@@ -52,19 +52,19 @@ class Table extends Component {
                   key={i}
                   image={image}
                   index={i}
-                  handleSelectionOrder={this.handleSelectionOrder}
+                  handleSelection={this.handleSelection}
                   handleCheckMatch={this.handleCheckMatch}
                 />
               ))}
             </tr>
             <tr>
               {images && images[1].map((image, i) => (
-                <Card key={i} image={image} index={i} handleSelectionOrder={this.handleSelectionOrder}/>
+                <Card key={i} image={image} index={i} handleSelection={this.handleSelection}/>
               ))}
             </tr>
             <tr>
               {images && images[2].map((image, i) => (
-                <Card key={i} image={image} index={i} handleSelectionOrder={this.handleSelectionOrder}/>
+                <Card key={i} image={image} index={i} handleSelection={this.handleSelection}/>
               ))}
             </tr>
           </tbody>
