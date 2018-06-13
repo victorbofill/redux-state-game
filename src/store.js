@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { images } from './components/game/reducers';
+import { images, selections, match } from './components/game/reducers';
 
 const rootReducer = combineReducers({
-  images
+  images,
+  selections,
+  match
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
