@@ -6,11 +6,12 @@ import { selectCard } from './actions';
 
 class Card extends Component {
   static propTypes = {
-    image: PropTypes.any
+    image: PropTypes.any,
+    selectCard: PropTypes.func
   };
 
   render() {
-    const { image } = this.props;
+    const { image, selectCard } = this.props;
 
     return (
       <td className={styles.card} onClick={(card) => selectCard(card)}>

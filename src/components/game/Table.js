@@ -12,13 +12,17 @@ class Table extends Component {
     card: PropTypes.any
   };
 
+  componentDidMount() {
+    this.props.loadImages();
+  }
+
   render() {
     const { images, card, loadImages } = this.props;
 
     return (
       <div>
         <p>Card: {card}</p>
-        <button onClick={() => loadImages()}>New Game</button>
+        <button onClick={(card) => loadImages(card)}>New Game</button>
         <table className={styles['game-table']}>
           <tbody>
             <tr>

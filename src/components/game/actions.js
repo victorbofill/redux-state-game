@@ -59,8 +59,10 @@ export const loadImages = () => {
 };
 
 export const selectCard = (card) => {
+  console.log(card);
+
   return {
     type: CARD_SELECTED,
-    payload: card
+    payload: card.target.src
   };
 };
