@@ -1,4 +1,4 @@
-import { IMAGES_LOAD } from './reducers';
+import { IMAGES_LOAD, CARD_SELECTED } from './reducers';
 
 import imageOne from '../img/01.jpg';
 import imageTwo from '../img/02.jpg';
@@ -55,5 +55,14 @@ export const loadImages = () => {
   return {
     type: IMAGES_LOAD,
     payload: arrayOfImageArrays
+  };
+};
+
+export const selectCard = (card) => {
+  console.log(card);
+
+  return {
+    type: CARD_SELECTED,
+    payload: card.target.src
   };
 };
