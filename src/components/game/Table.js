@@ -8,14 +8,16 @@ import { loadImages } from './actions';
 class Table extends Component {
   static propTypes = {
     images: PropTypes.array,
-    loadImages: PropTypes.func
+    loadImages: PropTypes.func,
+    card: PropTypes.any
   };
 
   render() {
-    const { images, loadImages } = this.props;
+    const { images, card, loadImages } = this.props;
 
     return (
       <div>
+        <p>Card: {card}</p>
         <button onClick={() => loadImages()}>New Game</button>
         <table className={styles['game-table']}>
           <tbody>
@@ -43,7 +45,7 @@ class Table extends Component {
 
 export default connect(
   state => (
-    { images: state.images }
+    { images: state.images, card: state.card }
   ),
   { loadImages }
 )(Table);

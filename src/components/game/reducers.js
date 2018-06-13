@@ -2,6 +2,7 @@ export const IMAGES_LOAD = 'IMAGES_LOAD';
 export const CARD_SELECTED = 'CARD_SELECTED';
 
 export const getImages = state => state.images;
+export const getCard = state => state.card;
 
 export function images(
   state = null,
@@ -18,7 +19,7 @@ export function images(
 export function card(
   state = null,
   { type, payload }) {
-    
+
   switch (type) {
     case CARD_SELECTED:
       return payload;

@@ -58,9 +58,9 @@ export const loadImages = () => {
   };
 };
 
-export const selectCard = (choice) => {
+export const selectCard = (card) => {
   return {
     type: CARD_SELECTED,
-    payload: choice
+    payload: card
   };
 };
